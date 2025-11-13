@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seira Production | Production House Futuristik & Sinematik</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Fonts: Orbitron (Futuristic Title) and Poppins (Body Text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Configuration for Tailwind */
+        :root {
+            --neon-blue: #00CCFF;
+            --dark-gray: #1A1A1A;
+            --font-orbitron: 'Orbitron', sans-serif;
+            --font-poppins: 'Poppins', sans-serif;
+        }
+
+        .font-orbitron { font-family: var(--font-orbitron); }
+        .font-poppins { font-family: var(--font-poppins); }
+
+        /* Custom Neon Glow Effect */
+        .neon-text {
+            color: var(--neon-blue);
+            text-shadow: 0 0 7px rgba(0, 204, 255, 0.5), 0 0 10px rgba(0, 204, 255, 0.4);
+        }
+
+        .neon-border {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+        }
+
+        .neon-border-subtle {
+            border-color: rgba(0, 204, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .neon-border-subtle:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
+            transform: translateY(-5px);
+        }
+
+        /* Hero Background Simulation (Dark Cinematic Loop) */
+        #hero-bg {
+            background: linear-gradient(135deg, #000000 0%, #111111 50%, #000000 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -10;
+        }
+
+        /* Animated light simulation */
+        #hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle at center, rgba(0, 204, 255, 0.1) 0%, transparent 50%);
+            animation: cinematic-light 40s infinite linear;
+            opacity: 0.3;
+        }
+
+        @keyframes cinematic-light {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Scroll Fade-In Animation */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': 'var(--dark-gray)',
+                        'neon-blue': 'var(--neon-blue)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-poppins">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-sm z-50 transition-all duration-300 border-b border-[#00CCFF]/30">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Placeholder -->
+            <a href="#hero" class="text-2xl font-orbitron font-extrabold tracking-widest neon-text">
+                SEIRA
+            </a>
+            <!-- Nav Links -->
+            <div class="flex space-x-8 text-sm">
+                <a href="#about" class="hover:text-neon-blue transition duration-300">TENTANG KAMI</a>
+                <a href="#services" class="hover:text-neon-blue transition duration-300">KATALOG LAYANAN</a>
+                <a href="#team" class="hover:text-neon-blue transition duration-300">TIM PRODUKSI</a>
+                <a href="#portfolio" class="hover:text-neon-blue transition duration-300">PORTFOLIO</a>
+                <a href="#contact" class="hover:text-neon-blue transition duration-300">KONTAK</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <!-- Simulated Cinematic Background -->
+            <div id="hero-bg"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 p-4 fade-in-on-scroll">
+                <!-- Logo Placeholder - Using Text as per instruction -->
+                <p class="text-4xl sm:text-6xl font-orbitron font-black tracking-[0.4em] mb-4 neon-text">
+                    SEIRA PRODUCTION
+                </p>
+                <!-- Title -->
+                <h1 class="text-xl sm:text-2xl text-gray-300 mb-10 font-poppins font-semibold tracking-wider">
+                    PRODUCTION HOUSE FUTURISTIK & SINEMATIK.
+                </h1>
+                <!-- CTA Button -->
+                <a href="#services" class="inline-block px-10 py-4 text-lg font-orbitron uppercase tracking-widest border-2 border-neon-blue text-neon-blue bg-transparent hover:bg-neon-blue hover:text-black transition duration-300 shadow-neon-blue hover:shadow-2xl hover:shadow-neon-blue/80 rounded-lg">
+                    Lihat Katalog Layanan
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Tentang Kami -->
+        <section id="about" class="py-24 bg-dark-bg border-t border-b border-[#00CCFF]/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-orbitron text-center mb-16 neon-text fade-in-on-scroll">TENTANG KAMI</h2>
+
+                <div class="max-w-4xl mx-auto text-center mb-16 fade-in-on-scroll">
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Seira Production berdiri untuk menghadirkan karya sinematik bagi *brand*, atlet, dan sineas yang ingin tampil profesional dan inspiratif. Kami memadukan teknik pengambilan gambar modern dengan *storytelling* kuat untuk hasil yang berkesan.
+                    </p>
+                </div>
+
+                <!-- Visi & Misi -->
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- Visi -->
+                    <div class="p-6 border-2 border-gray-700 rounded-xl bg-black/50 hover:bg-black/80 transition duration-300 fade-in-on-scroll">
+                        <h3 class="text-2xl font-orbitron mb-4 border-b border-neon-blue/50 pb-2 text-neon-blue">VISI</h3>
+                        <p class="text-gray-400">Menjadi production house pilihan utama yang menghadirkan karya sinematik berkelas dunia.</p>
+                    </div>
+
+                    <!-- Misi -->
+                    <div class="p-6 border-2 border-gray-700 rounded-xl bg-black/50 hover:bg-black/80 transition duration-300 fade-in-on-scroll">
+                        <h3 class="text-2xl font-orbitron mb-4 border-b border-neon-blue/50 pb-2 text-neon-blue">MISI</h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start"><span class="mr-3 text-neon-blue">⚡</span> Menghadirkan karya visual berkualitas tinggi dengan pendekatan kreatif.</li>
+                            <li class="flex items-start"><span class="mr-3 text-neon-blue">⚡</span> Memberikan layanan yang cepat, tepat, dan profesional.</li>
+                            <li class="flex items-start"><span class="mr-3 text-neon-blue">⚡</span> Menggunakan teknologi terkini untuk hasil sinematik maksimal.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Katalog Layanan -->
+        <section id="services" class="py-24 bg-dark-bg">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-orbitron text-center mb-16 neon-text fade-in-on-scroll">KATALOG LAYANAN</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Service Card 1: Film Production -->
+                    <div class="p-6 bg-black border neon-border-subtle rounded-xl fade-in-on-scroll" data-delay="100">
+                        <h3 class="text-2xl font-orbitron mb-2 text-neon-blue">🎥 Film Production</h3>
+                        <p class="text-gray-400 mb-6 text-sm">Pembuatan film pendek, iklan komersial, atau dokumenter dengan hasil sinematik profesional.</p>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Basic – Rp 10.000.000</p>
+                                <p class="text-xs text-gray-500">2 mnt, 1 hari shooting, 1 kru, editing dasar, 1 revisi.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Professional – Rp 20.000.000</p>
+                                <p class="text-xs text-gray-500">3–5 mnt, 2 hari shooting, 2 kamera+lighting, color grading, sound design.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Premium – Rp 35.000.000+</p>
+                                <p class="text-xs text-gray-500">5–10 mnt, full crew, concept dev., scoring original, 3 revisi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2: Sports Documentary -->
+                    <div class="p-6 bg-black border neon-border-subtle rounded-xl fade-in-on-scroll" data-delay="200">
+                        <h3 class="text-2xl font-orbitron mb-2 text-neon-blue">🏅 Sports Documentary</h3>
+                        <p class="text-gray-400 mb-6 text-sm">Dokumentasi sinematik olahraga dengan konsep visual kuat dan narasi mendalam.</p>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Starter – Rp 15.000.000</p>
+                                <p class="text-xs text-gray-500">3 mnt, 1 hari shooting, highlight slow motion, 1 revisi.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Pro – Rp 25.000.000</p>
+                                <p class="text-xs text-gray-500">5–7 mnt, 2 hari shooting, 2 kamera + drone, voice-over naratif.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Ultimate – Rp 40.000.000+</p>
+                                <p class="text-xs text-gray-500">10–15 mnt, multi lokasi, drone & GoPro, wawancara atlet, scoring & subtitle.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3: Cinematic Editing -->
+                    <div class="p-6 bg-black border neon-border-subtle rounded-xl fade-in-on-scroll" data-delay="300">
+                        <h3 class="text-2xl font-orbitron mb-2 text-neon-blue">🎞 Cinematic Editing</h3>
+                        <p class="text-gray-400 mb-6 text-sm">Editing video profesional bergaya film lengkap dengan *color grading* dan *sound design*.</p>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Basic – Rp 500.000</p>
+                                <p class="text-xs text-gray-500">1 mnt, editing dasar, transisi sederhana, 1 revisi.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Standard – Rp 1.500.000</p>
+                                <p class="text-xs text-gray-500">5 mnt, cinematic grading, motion text, sound ambience, 2 revisi.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Premium – Rp 3.000.000+</p>
+                                <p class="text-xs text-gray-500">10 mnt, motion graphics & logo animation, subtitle, 3 revisi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4: Boost YouTube Viewers -->
+                    <div class="p-6 bg-black border neon-border-subtle rounded-xl fade-in-on-scroll" data-delay="400">
+                        <h3 class="text-2xl font-orbitron mb-2 text-neon-blue">🚀 Boost YouTube Views</h3>
+                        <p class="text-gray-400 mb-6 text-sm">Promosi YouTube resmi melalui Google Ads untuk meningkatkan *view* dan *engagement*.</p>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Starter – Rp 100.000 (3 Hari)</p>
+                                <p class="text-xs text-gray-500">Estimasi 1.000–2.000 views organik.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Growth – Rp 300.000 (7 Hari)</p>
+                                <p class="text-xs text-gray-500">Estimasi 3.000–6.000 views, targeting sesuai niche.</p>
+                            </div>
+                            <div class="border-l-4 border-neon-blue pl-4">
+                                <p class="font-semibold">Premium – Rp 1.000.000 (30 Hari)</p>
+                                <p class="text-xs text-gray-500">Estimasi 10.000–20.000 views, analisis performa mendalam.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tim Produksi (Updated for clear hover/border effect) -->
+        <section id="team" class="py-24 bg-black border-t border-b border-[#00CCFF]/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-orbitron text-center mb-16 neon-text fade-in-on-scroll">TIM PRODUKSI</h2>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <!-- Placeholder div: Content is generated by JavaScript at the end of the body -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Testimoni Klien -->
+        <section id="testimonials" class="py-24 bg-dark-bg border-b border-[#00CCFF]/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-orbitron text-center mb-16 neon-text fade-in-on-scroll">APA KATA KLIEN KAMI</h2>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- Testimonial Card 1 -->
+                    <div class="p-6 border border-gray-700 rounded-xl bg-black/50 fade-in-on-scroll">
+                        <p class="text-3xl text-neon-blue mb-4">“</p>
+                        <p class="italic text-gray-300 mb-4">Energi dan sinematografinya luar biasa.</p>
+                        <p class="text-right text-sm font-semibold text-neon-blue">— Max V.</p>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="p-6 border border-gray-700 rounded-xl bg-black/50 fade-in-on-scroll" data-delay="100">
+                        <p class="text-3xl text-neon-blue mb-4">“</p>
+                        <p class="italic text-gray-300 mb-4">Editing dan storytelling mereka sangat kuat.</p>
+                        <p class="text-right text-sm font-semibold text-neon-blue">— Chris N.</p>
+                    </div>
+                    <!-- Testimonial Card 3 -->
+                    <div class="p-6 border border-gray-700 rounded-xl bg-black/50 fade-in-on-scroll" data-delay="200">
+                        <p class="text-3xl text-neon-blue mb-4">“</p>
+                        <p class="italic text-gray-300 mb-4">Tim yang solid dan profesional.</p>
+                        <p class="text-right text-sm font-semibold text-neon-blue">— Eno B.</p>
+                    </div>
+                    <!-- Testimonial Card 4 -->
+                    <div class="p-6 border border-gray-700 rounded-xl bg-black/50 fade-in-on-scroll" data-delay="300">
+                        <p class="text-3xl text-neon-blue mb-4">“</p>
+                        <p class="italic text-gray-300 mb-4">Kolaborasi yang seru dan penuh ide kreatif.</p>
+                        <p class="text-right text-sm font-semibold text-neon-blue">— Chandra L.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Portfolio -->
+        <section id="portfolio" class="py-24 bg-black">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-orbitron text-center mb-16 neon-text fade-in-on-scroll">KARYA TERPILIH</h2>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Placeholder Thumbnails (8 items) -->
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+1" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+2" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+3" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+4" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+5" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+6" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll hidden sm:block lg:block">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+7" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item relative aspect-video bg-gray-900 border border-gray-700 rounded-lg overflow-hidden cursor-pointer group fade-in-on-scroll hidden sm:block lg:block">
+                        <img src="https://placehold.co/400x225/111111/00CCFF?text=Video+8" alt="Video Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-5xl neon-text">▶</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12 fade-in-on-scroll">
+                    <button class="px-8 py-3 text-sm font-orbitron uppercase tracking-widest border border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black transition duration-300 rounded-lg">
+                        Lihat Selengkapnya
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Kontak -->
+        <section id="contact" class="py-24 bg-dark-bg border-t border-[#00CCFF]/10">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="fade-in-on-scroll">
+                    <h2 class="text-4xl font-orbitron mb-8 neon-text">HUBUNGI KAMI</h2>
+                    <p class="text-gray-400 mb-8">Siap mewujudkan proyek sinematik Anda? Hubungi kami melalui detail berikut atau kirimkan pesan langsung.</p>
+
+                    <div class="space-y-4 text-lg">
+                        <p class="flex items-center text-gray-300">
+                            <span class="text-neon-blue mr-3 text-xl">📧</span> Email: <a href="mailto:hello@seiraproduction.co" class="ml-2 hover:text-neon-blue transition">hello@seiraproduction.co</a>
+                        </p>
+                        <p class="flex items-center text-gray-300">
+                            <span class="text-neon-blue mr-3 text-xl">💬</span> WhatsApp: <a href="https://wa.me/6281234567890" class="ml-2 hover:text-neon-blue transition">+62 812-3456-7890</a>
+                        </p>
+                        <p class="flex items-center text-gray-300">
+                            <span class="text-neon-blue mr-3 text-xl">📍</span> Lokasi: <span class="ml-2">Jl. Kreatif No.12, Jakarta</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contact-form" class="p-8 bg-black/50 border neon-border-subtle rounded-xl fade-in-on-scroll" onsubmit="event.preventDefault(); showMessage(this)">
+                    <h3 class="text-2xl font-orbitron mb-6 text-neon-blue">Kirim Pesan</h3>
+                    
+                    <div class="mb-4">
+                        <input type="text" id="name" name="name" placeholder="Nama Anda" required 
+                               class="w-full p-3 bg-dark-bg border border-gray-700 rounded-lg focus:outline-none focus:ring-1 focus:ring-neon-blue text-white placeholder-gray-500 transition duration-200">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" id="email" name="email" placeholder="Email Anda" required 
+                               class="w-full p-3 bg-dark-bg border border-gray-700 rounded-lg focus:outline-none focus:ring-1 focus:ring-neon-blue text-white placeholder-gray-500 transition duration-200">
+                    </div>
+                    <div class="mb-6">
+                        <textarea id="message" name="message" rows="4" placeholder="Pesan atau detail proyek Anda" required 
+                                  class="w-full p-3 bg-dark-bg border border-gray-700 rounded-lg focus:outline-none focus:ring-1 focus:ring-neon-blue text-white placeholder-gray-500 transition duration-200"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full px-6 py-3 text-lg font-orbitron uppercase tracking-widest border-2 border-neon-blue text-neon-blue bg-transparent hover:bg-neon-blue hover:text-black transition duration-300 rounded-lg">
+                        KIRIM PESAN
+                    </button>
+
+                    <div id="form-message" class="mt-4 text-center text-neon-blue" style="display: none;"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-neon-blue/30">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-500 font-poppins">
+                &copy; 2025 Seira Production — All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Scroll Animation, Form Message, and TEAM GENERATION -->
+    <script>
+        // Function to show form success message (no alert/confirm)
+        function showMessage(form) {
+            const messageElement = document.getElementById('form-message');
+            messageElement.textContent = 'Terima kasih! Pesan Anda telah kami terima. Kami akan segera menghubungi Anda.';
+            messageElement.style.display = 'block';
+            form.reset();
+            
+            // Hide the message after 5 seconds
+            setTimeout(() => {
+                messageElement.style.display = 'none';
+            }, 5000);
+        }
+
+        // --- TEAM GENERATION SCRIPT (Optimized for reliable execution at the end of body) ---
+        const teamMembers = [
+            { name: "Abiyu", role: "Director", icon: "🎬" },
+            { name: "Vabyan", role: "Cinematographer", icon: "🎥" },
+            { name: "Fandi", role: "Editor", icon: "✂️" },
+            { name: "Ririn", role: "Producer", icon: "💼" },
+            { name: "Naura", role: "Production Designer", icon: "🖼️" },
+        ];
+
+        const createTeamCard = (member) => `
+            <!-- Using neon-border-subtle class for consistent neon hover effect and fade-in -->
+            <div class="team-card p-6 bg-black border border-gray-700 neon-border-subtle rounded-xl text-center transition duration-300 cursor-pointer fade-in-on-scroll">
+                <p class="text-5xl mb-4">${member.icon}</p>
+                <h3 class="text-xl font-orbitron text-white">${member.name}</h3>
+                <p class="text-sm text-neon-blue">${member.role}</p>
+            </div>
+        `;
+        
+        // Execute generation directly, as the target element is loaded when this script runs.
+        const teamGrid = document.querySelector('#team .grid');
+        if (teamGrid) {
+            teamGrid.innerHTML = teamMembers.map(createTeamCard).join('');
+        }
+        // -------------------------------------------------------------------
+
+
+        // Observer for Fade-In Animation on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('fade-in-visible');
+                    }, delay);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Apply observer to all elements with fade-in-on-scroll class
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
